@@ -1,0 +1,73 @@
+{% extends "Participation/base.html" %}
+
+{% block title %}Login to Rango{% endblock %}
+
+{% block body_block %}
+    <div class="bs-example">
+    <form role="search" class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" placeholder="Search" class="form-control">
+                </div>
+            </form>
+  <div class="page-header">
+    <h1>Experiment List<small>  to view all Experiment!</small></h1>
+      </div>
+<div class="hero-unit">
+<div class="bs-example">
+    <div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading">Experiment List</div>
+		<div class="panel-body">
+            {% if user.is_staff and user.is_authenticated %}
+       <p>Click on your Experiment ID to view participants that bid your Experiment.</p>
+      {% endif %}
+        </div>
+		<!-- Table -->
+    <form action="/Participation/experiments_list/" method="post">
+    {% csrf_token %}
+		<table class="table">
+        {% if exp_list %}
+			<thead>
+				<tr>
+			 {% if user.is_staff and user.is_authenticated %}
+             <th>Experimenter ID:</th>
+             {% endif %}
+             <th>Experiment Name:</th>
+             <th>Start Date:</th>
+             <th>End Date:</th>
+             <th>Reward (SGD):</th>
+             <th>No. of Participation:</th>
+             {% if not user.is_staff and user.is_authenticated %}
+             <th>BID:</th>
+              {% endif %}
+          </tr>
+			</thead>
+			<tbody>
+         {% for experiment in exp_list %}
+             <tr>
+             {% if user.is_staff and user.is_authenticated %}
+                <td><a href="{{ experiment.el_id }}/">{{ experiment.expter_id_id }}</a></td>
+            {% endif %}
+                <td>{{ experiment.name }}</td>
+                 <td>{{ experiment.startDate }} </td>
+                <td>{{ experiment.endDate }} </td>
+                 <td> {{ experiment.reward }} </td>
+                <td> {{ experiment.noOfParticipant }} </td>
+             {% if not user.is_staff and user.is_authenticated %}
+             <td><button name="el_id_id" type="submit" value="{{ experiment.el_id }}">BID</button></td>
+                  <input type="hidden" name="part_id_id" value="{{ experiment.expter_id_id }}">
+             {% endif %}
+             </tr>
+
+         {% endfor %}
+     {% else %}
+         <p> &nbsp; &nbsp; &nbsp;<b>Bid Successful!</b></p>
+     {% endif %}
+			</tbody>
+		</table>
+    </form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

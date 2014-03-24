@@ -1,0 +1,39 @@
+{% extends "Participation/base.html" %}
+
+{% block body_block %}
+    <div class="bs-example">
+  <div class="page-header">
+    <h1>Profile<small>  view your Personal Information!</small></h1>
+      </div>
+<div class="hero-unit">
+	   <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+       <table width="390px">
+           <tr>
+           <th>Username: </th>
+           <td>{{ user.username }}</td>
+           </tr>
+           <tr>
+           <th>Email: </th>
+           <td>{{ user.email }}</td></tr>
+           <tr>
+           <th>Date Join: </th>
+           <td>{{user.date_joined}}</td>
+           </tr>
+           <tr>
+           <th>Website: </th>
+           <td>www.abc.com </td>
+           </tr>
+           <tr>
+           <th>School: </th>
+           <td>University of Glasgow</td>
+           </tr>
+           <tr>
+           <th>Contact No: </th>
+           <td>91829223</td>
+           </tr>
+         </table>
+</div>
+    <div>
+    </div>
+    </div>
+{% endblock %}

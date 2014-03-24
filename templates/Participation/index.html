@@ -1,0 +1,115 @@
+{% extends "Participation/base.html" %}
+
+{% block title %}Login to Rango{% endblock %}
+
+{% block body_block %}
+
+<!--slider-->
+<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+    	<!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+       <!-- Carousel items -->
+       <div class="carousel-inner">
+        <div class="item active">
+            <a href="/Participation/registerParticipant/">
+                <img src="http://4.bp.blogspot.com/-WNjPHlFm6pc/UyFDFnsSSWI/AAAAAAAANsk/GfJFUTOOQC8/s1600/rig51_students+(1).jpg" alt="">
+            </a>
+            <div class="carousel-caption">
+
+            </div>
+        </div>
+        <div class="item">
+            <a href="/Participation/about/">
+                <img src="http://2.bp.blogspot.com/-hAEPpNHlBNQ/UyKXfsx0piI/AAAAAAAANtM/PGM7PYu0PuQ/s1600/high_building_on_the_mirror_220956.jpg.jpg.jpg" alt="">
+            </a>
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <div class="item">
+            <a href="#">
+            <img src="http://www.wallsave.com/wallpapers/1366x768/quote/194509/quote-anonymous-quotes-hd-widescreen-high-definition-194509.jpg" alt="">
+            </a>
+            <div class="carousel-caption">
+                <h4>About Paticipants Wanted</h4>
+                <p>You are able to register as either a experimenter or a participant. Earn, bid and view experiments with no charges.</p>
+            </div>
+        </div>
+    </div>
+
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="bs-example">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#sectionA">Recent Experiments</a></li>
+        <li><a data-toggle="tab" href="#sectionB">Up Coming Experiments</a></li>
+        <li><a data-toggle="tab" href="#sectionC">Most Paid Experiments</a></li>
+
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+            <h3>Recently Added Experiments</h3>
+            <p>Experiments that are Recently Added, having the highest popularity among the the rest. Participants are able to
+            login and bid experiments, pend for experiment's decision if to accept or reject participant's bid.
+            To create an account, register yourself as a participant to bid today! Sign up, Earn and bid for free!</p>
+            <ul>
+            <li><h5>Bootstrap heading 2.3.1</h5></li>
+            <li><h5>Javascript Makes it Easy</h5></li>
+            <li><h5>Bootstrap 3.0.2 CSS </h5></li>
+            <li><h5>Consultant CRUD Site</h5></li>
+                </ul>
+ <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+</ul>
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+            <h3>New Up-Coming Experiments</h3>
+              <p>Experiments that are up-coming, having the highest popularity among the the rest. Participants are able to
+            login and bid experiments, pend for experiment's decision if to accept or reject participant's bid.
+            To create an account, register yourself as a participant to bid today! Sign up, Earn and bid for free!</p>
+            <ul>
+            <li><h5>Bootstrap heading 2.3.1 <span class="label label-default">New</span></h5></li>
+            <li><h5>HTTP CSS Webserver <span class="label label-default">New</span></h5></li>
+            <li><h5>AJAX/JQuery Functions <span class="label label-default">New</span></h5></li>
+            <li><h5>Consultant CRUD Site <span class="label label-default">New</span></h5></li>
+                </ul>
+             <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+</ul>
+             </div>
+     <div id="sectionC" class="tab-pane fade">
+            <h3>Most Paid Experiments</h3>
+            <p>Experiments that are most paid, having the highest pay among the the rest. Participants are able to
+            login and bid experiments, pend for experiment's decision if to accept or reject participant's bid.
+            To create an account, register yourself as a participant to bid today! Sign up, Earn and bid for free!</p>
+      <ul>
+            <li><h5>Hello HTTP Server</h5></li>
+            <li><h5>Javascript Makes it Easy</h5></li>
+            <li><h5>C Programming AVL Tree Code</h5></li>
+            <li><h5>Bootstrap 3.0.2 CSS </h5></li>
+                </ul>
+         <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+</ul>
+     </div>
+
+    </div>
+</div>
+
+{% endblock %}

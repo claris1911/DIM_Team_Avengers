@@ -1,0 +1,48 @@
+{% extends "Participation/base.html" %}
+
+{% block body_block %}
+    <div class="bs-example">
+  <div class="page-header">
+    <h1>Experiment List<small>  to view all Experiment!</small></h1>
+      </div>
+<div class="hero-unit">
+<div class="bs-example">
+    <div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading">Notify Users</div>
+		<div class="panel-body">
+			<p>The following contains Participants' email that has bid an experiment, you could either accept or reject Participants.
+            <br>Email will be send to notify Participants.</p>
+        </div>
+	<!-- Table -->
+        <form action= './email/' method="POST">
+        {% csrf_token %}
+		<table class="table">
+			<thead>
+		    <tr>
+             <th>Experiment Name:</th>
+             <th>Email:</th>
+             <th>Notify: </th>
+          </tr>
+			</thead>
+			<tbody>
+            {% for user in user_email_list %}
+             <tr>
+                <td>{{ user.values.get.username }}</td>
+                <td><input type="text" name="email" value="{{ user.values.get.email }}" size="50" /></td>
+                 <td><input type="checkbox" value="{{ user.values.get.email }}" name="email[]"></td>
+             </tr>
+            {% endfor %}
+               <tr>
+                <td></td>
+                <td></td>
+                 <td><input type="submit" value="Notify All" id="toggle1" onclick="myFunction()"/></td>
+             </tr>
+			</tbody>
+		</table>
+    </form>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

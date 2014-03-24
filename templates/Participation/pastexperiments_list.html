@@ -1,0 +1,47 @@
+{% extends "Participation/base.html" %}
+
+{% block title %}Login to Rango{% endblock %}
+
+{% block body_block %}
+    <div class="bs-example">
+  <div class="page-header">
+    <h1>Current Experiments<small>  to view all bid Experiment!</small></h1>
+      </div>
+<div class="hero-unit">
+<div class="bs-example">
+		<!-- Table -->
+
+     {% if exp_list %}
+         {% csrf_token %}
+        {{ exp_list.el_id.expter_id.user_id }}
+		<table class="table">
+			<thead>
+			<tr>
+             <th>Experiment Name:</th>
+             <th>Start Date:</th>
+             <th>End Date:</th>
+             <th>Reward (SGD):</th>
+             <th>Status</th>
+          </tr>
+			</thead>
+			<tbody>
+        {% for experiment in exp_list %}
+             <tr>
+                <td>{{ experiment.el_id.name }}</td>
+                 <td>{{ experiment.el_id.startDate }} </td>
+                <td>{{ experiment.el_id.endDate }} </td>
+                 <td> {{ experiment.el_id.reward }} </td>
+                <td> - </td>
+             </tr>
+         {% endfor %}
+	   {% else %}
+		<li>No experiments at present.</li>
+	   {% endif %}
+		</tbody>
+		</table>
+
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

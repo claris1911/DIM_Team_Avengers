@@ -1,0 +1,43 @@
+{% extends "Participation/base.html" %}
+
+{% block title %}Login to Rango{% endblock %}
+
+{% block body_block %}
+    <div class="bs-example">
+  <div class="page-header">
+    <h1>Login Now!<small>  to bid, and earn money today!</small></h1>
+      </div>
+<div class="hero-unit">
+        <form class="form-horizontal" id="login_form" method="post" action="/Participation/login/">
+        <div class="form-group">
+            {% csrf_token %}
+            <label for="inputEmail" class="control-label col-xs-2">Username</label>
+            <div class="col-xs-10">
+            <input type="text" name="username" value="" size="50" />
+            </div>
+             </div>
+            <div class="form-group">
+            <label for="inputEmail" class="control-label col-xs-2">Password</label>
+             <div class="col-xs-10">
+              <input type="password" name="password" value="" size="50" />
+           </div>
+             </div>
+
+            <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+</div>
+{% endblock %}
